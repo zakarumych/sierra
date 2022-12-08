@@ -16,8 +16,9 @@ keywords = ["vulkan"]
 serde-1 = ["serde", "serde_bytes", "smallvec/serde"]
 
 vulkan = ["erupt", "gpu-alloc", "gpu-alloc-erupt", "gpu-descriptor", "gpu-descriptor-erupt", "mtl", "objc", "core-graphics-types", "moltenvk-sys"]
+webgpu = ["wgpu"]
 
-default = ["vulkan"]
+default = ["webgpu"]
 
 proc-verbose-docs = ["sierra-proc/verbose-docs"]
 glsl = ["naga/glsl-in", "codespan-reporting"]
@@ -50,6 +51,7 @@ tracing = { version = "0.1", optional = true }
 bitsetium = "0.0.2"
 hashbrown = "0.13"
 num-traits = "0.2"
+wgpu = { optional = true }
 
 [target.'cfg(any(target_os="macos", target_os="ios"))'.dependencies]
 mtl = { package = "metal", version = "0.24", optional = true }
